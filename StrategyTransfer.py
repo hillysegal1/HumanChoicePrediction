@@ -77,9 +77,9 @@ config.update(args.__dict__)
 meta_features_map = {"features": {"EFs": {"FEATURES_PATH": config["SIMULATION_EFs_PATH"], "REVIEW_DIM": 37},
                                   "GPT4": {"FEATURES_PATH": "data/GPT4_PCA_36.csv", "REVIEW_DIM": 36},
                                   "BERT": {"FEATURES_PATH": "data/BERT_PCA_36.csv", "REVIEW_DIM": 36}},
-                     "architecture": {"LSTM": {"use_user_vector": True},
+                     "architecture": {"LSTM": {"use_user_vector": False},
                                       "transformer": {"use_user_vector": False},
-                                      "LSTM_concat_T": {"use_user_vector": False}}
+                                      "LSTM_concat_T": {"use_user_vector": True}}
                      }
 
 for meta_feature, meta_feature_map in meta_features_map.items():

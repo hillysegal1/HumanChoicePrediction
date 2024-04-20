@@ -1,9 +1,8 @@
 import torch
 import torch.nn as nn
-from SpecialLSTM import SpecialLSTM
 from utils.usersvectors import UsersVectors
 from environments import environment
-
+from SpecialLSTM import SpecialLSTM
 
 class Attention(nn.Module):
     def __init__(self, hidden_dim):
@@ -17,7 +16,6 @@ class Attention(nn.Module):
         context_vector = torch.sum(attention_weights * lstm_outputs, dim=1)
         return context_vector
 
-
 class SpecialLSTMWithAttention(nn.Module):
     def __init__(self, n_layers, input_dim, hidden_dim, output_dim, dropout):
         super(SpecialLSTMWithAttention, self).__init__()
@@ -27,9 +25,8 @@ class SpecialLSTMWithAttention(nn.Module):
     def forward(self, input_vec, game_vector, user_vector):
         lstm_output_dict = self.special_lstm.forward(input_vec, game_vector, user_vector)
         lstm_outputs = lstm_output_dict["output"]
-        context_vector = self.attention.forward(lstm_outputs)  # Call the attention module directly
+        context_vector = self.attention.forward(lstm_outputs)
         return context_vector
-
 
 class LSTM_env_ARC(nn.Module):
     def __init__(self, n_layers, input_dim, hidden_dim, output_dim, dropout):
@@ -50,7 +47,6 @@ class LSTM_env_ARC(nn.Module):
                                  "game_vector": self.currentGame})  # Call the forward method of the model attribute
         output["proba"] = torch.exp(output["output"].flatten())
         return output
-
 
 class LSTM_env(environment.Environment):
     def init_model_arc(self, config):
