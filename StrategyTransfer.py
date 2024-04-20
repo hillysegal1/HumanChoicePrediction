@@ -7,6 +7,8 @@ from utils import personas
 import argparse
 
 parser = argparse.ArgumentParser(description='Hyperparameter tuning with wandb.')
+
+
 def str2bool(v):
     if isinstance(v, bool):
         return v
@@ -16,6 +18,7 @@ def str2bool(v):
         return False
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
+
 
 # General Features
 parser.add_argument('--ENV_HPT_mode', type=str2bool, default=False, help='Enable/disable HPT mode')
@@ -64,7 +67,6 @@ parser.add_argument('--OFFLINE_SIM_DATA_PATH', type=str, default="data/LLM_games
 parser.add_argument('--personas_balanced', type=str2bool, default=True, help='Personas balanced flag')
 parser.add_argument('--personas_group_number', type=int, default=-1, help='Personas group number')
 
-
 args = parser.parse_args()
 
 main_run = wandb.init(project='Strategy_Transfer_TACL')
@@ -76,7 +78,8 @@ meta_features_map = {"features": {"EFs": {"FEATURES_PATH": config["SIMULATION_EF
                                   "GPT4": {"FEATURES_PATH": "data/GPT4_PCA_36.csv", "REVIEW_DIM": 36},
                                   "BERT": {"FEATURES_PATH": "data/BERT_PCA_36.csv", "REVIEW_DIM": 36}},
                      "architecture": {"LSTM": {"use_user_vector": True},
-                                      "transformer": {"use_user_vector": False}}
+                                      "transformer": {"use_user_vector": False},
+                                      "LSTM_concat_T": {"use_user_vector": False}}
                      }
 
 for meta_feature, meta_feature_map in meta_features_map.items():
@@ -91,7 +94,8 @@ if "LLM_USERS_PER_PERSONA" in config.keys():
     config["offline_simulation_size"] = config["LLM_USERS_PER_PERSONA"] * len(groups)
 
 if "online_simulation_factor" in config.keys():
-    config["online_simulation_size"] = (config["offline_simulation_size"] + config["human_train_size"]) * config["online_simulation_factor"]
+    config["online_simulation_size"] = (config["offline_simulation_size"] + config["human_train_size"]) * config[
+        "online_simulation_factor"]
 
 config["input_dim"] = config['REVIEW_DIM'] + STRATEGY_DIM
 config["wandb_run_id"] = wandb.run.id
@@ -108,3 +112,5 @@ if config["architecture"] == "LSTM":
     env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
 elif config["architecture"] == "transformer":
     env_model = environments.transformer_env.transformer_env(env_name, config=config)
+elif config["architecture"] == "LSTM_concat_T":
+    env_model = environments.LSTM_concat_T_env.LSTM_env(env_name, config=config)
