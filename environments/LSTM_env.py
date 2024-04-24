@@ -1,7 +1,7 @@
 from environments import environment
 import torch
 import torch.nn as nn
-from SpecialLSTM import SpecialLSTM
+from SpecialLSTM_with_attention import SpecialLSTM
 from consts import *
 
 

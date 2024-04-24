@@ -77,9 +77,9 @@ config.update(args.__dict__)
 meta_features_map = {"features": {"EFs": {"FEATURES_PATH": config["SIMULATION_EFs_PATH"], "REVIEW_DIM": 37},
                                   "GPT4": {"FEATURES_PATH": "data/GPT4_PCA_36.csv", "REVIEW_DIM": 36},
                                   "BERT": {"FEATURES_PATH": "data/BERT_PCA_36.csv", "REVIEW_DIM": 36}},
-                     "architecture": {"LSTM": {"use_user_vector": False},
-                                      "transformer": {"use_user_vector": False},
-                                      "LSTM_attention": {"use_user_vector": True}}
+                     "architecture": {"LSTM": {"use_user_vector": True},
+                                      "transformer": {"use_user_vector": False}
+                                      }
                      }
 
 for meta_feature, meta_feature_map in meta_features_map.items():
@@ -112,5 +112,4 @@ if config["architecture"] == "LSTM":
     env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
 elif config["architecture"] == "transformer":
     env_model = environments.transformer_env.transformer_env(env_name, config=config)
-elif config["architecture"] == "LSTM_attention":
-    env_model = environments.LSTM_attention_env.LSTM_env(env_name, config=config)
+

@@ -1,12 +1,13 @@
 from environments import environment
 import torch
 import torch.nn as nn
-from SpecialLSTM_attention import SpecialLSTMWithAttention  # Adjust import
+from SpecialLSTM_with_attention import SpecialLSTM
+from consts import *
 
 
-class LSTM_env_ARC(SpecialLSTMWithAttention):  # Change inheritance to SpecialLSTMWithAttention
-    def forward(self, input_vec, game_vector, user_vector):  # Modify forward method arguments
-        data = super().forward(input_vec, game_vector, user_vector)  # Call forward method with correct arguments
+class LSTM_env_ARC_attention(SpecialLSTM):
+    def forward(self, vectors, **kwargs):
+        data = super().forward(vectors["x"], vectors["game_vector"], vectors["user_vector"])
         return data
 
     def predict_proba(self, data, update_vectors: bool, vectors_in_input=False):
@@ -19,11 +20,11 @@ class LSTM_env_ARC(SpecialLSTMWithAttention):  # Change inheritance to SpecialLS
         return output
 
 
-class LSTM_env(environment.Environment):
+
+class LSTM_env_attention(environment.Environment):
     def init_model_arc(self, config):
-        self.model = LSTM_env_ARC(n_layers=config['n_layers'], input_dim=config['input_dim'],
-                                  hidden_dim=config['hidden_dim'], output_dim=config['output_dim'],
-                                  dropout=config['dropout']).double()  # Initialize SpecialLSTMWithAttention
+        self.model = LSTM_env_ARC_attention(n_layers=self.n_layers, input_dim=config['input_dim'], hidden_dim=self.hidden_dim,
+                                  output_dim=config["output_dim"], dropout=config["dropout"]).double()
 
     def predict_proba(self, data, update_vectors: bool, vectors_in_input=False):
         if vectors_in_input:
@@ -36,6 +37,7 @@ class LSTM_env(environment.Environment):
             self.currentGame = output["game_vector"]
         return output
 
+
     def init_user_vector(self):
         self.currentDM = self.model.init_user()
 
@@ -43,4 +45,4 @@ class LSTM_env(environment.Environment):
         self.currentGame = self.model.init_game()
 
     def get_curr_vectors(self):
-        return {"user_vector": 888}
+        return {"user_vector": 888, }

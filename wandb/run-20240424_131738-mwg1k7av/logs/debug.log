@@ -1,0 +1,41 @@
+2024-04-24 13:17:38,511 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-24 13:17:38,512 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Configure stats pid to 3688
+2024-04-24 13:17:38,512 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Hilly Segal\.config\wandb\settings
+2024-04-24 13:17:38,512 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Loading settings from C:\HumanChoicePredictionCloned\wandb\settings
+2024-04-24 13:17:38,512 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-04-24 13:17:38,512 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-24 13:17:38,513 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'StrategyTransfer.py', 'program_abspath': 'C:\\HumanChoicePredictionCloned\\StrategyTransfer.py', 'program': 'C:/HumanChoicePredictionCloned/StrategyTransfer.py'}
+2024-04-24 13:17:38,513 INFO    MainThread:3688 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-24 13:17:38,514 INFO    MainThread:3688 [wandb_init.py:_log_setup():521] Logging user logs to C:\HumanChoicePredictionCloned\wandb\run-20240424_131738-mwg1k7av\logs\debug.log
+2024-04-24 13:17:38,514 INFO    MainThread:3688 [wandb_init.py:_log_setup():522] Logging internal logs to C:\HumanChoicePredictionCloned\wandb\run-20240424_131738-mwg1k7av\logs\debug-internal.log
+2024-04-24 13:17:38,514 INFO    MainThread:3688 [wandb_init.py:init():561] calling init triggers
+2024-04-24 13:17:38,514 INFO    MainThread:3688 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {}
+2024-04-24 13:17:38,515 INFO    MainThread:3688 [wandb_init.py:init():611] starting backend
+2024-04-24 13:17:38,515 INFO    MainThread:3688 [wandb_init.py:init():615] setting up manager
+2024-04-24 13:17:38,521 INFO    MainThread:3688 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2024-04-24 13:17:38,529 INFO    MainThread:3688 [wandb_init.py:init():623] backend started and connected
+2024-04-24 13:17:38,543 INFO    MainThread:3688 [wandb_init.py:init():715] updated telemetry
+2024-04-24 13:17:38,628 INFO    MainThread:3688 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-24 13:17:39,713 INFO    MainThread:3688 [wandb_run.py:_on_init():2357] communicating current version
+2024-04-24 13:17:40,805 INFO    MainThread:3688 [wandb_run.py:_on_init():2366] got version response 
+2024-04-24 13:17:40,806 INFO    MainThread:3688 [wandb_init.py:init():799] starting run threads in backend
+2024-04-24 13:17:41,344 INFO    MainThread:3688 [wandb_run.py:_console_start():2335] atexit reg
+2024-04-24 13:17:41,344 INFO    MainThread:3688 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2024-04-24 13:17:41,344 INFO    MainThread:3688 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2024-04-24 13:17:41,345 INFO    MainThread:3688 [wandb_run.py:_redirect():2280] Redirects installed.
+2024-04-24 13:17:41,345 INFO    MainThread:3688 [wandb_init.py:init():842] run started, returning control to user process
+2024-04-24 13:17:41,346 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb None None {'ENV_HPT_mode': False, 'seed': 1, 'task': 'off_policy', 'ENV_LEARNING_RATE': 0.001, 'loss_weight_type': 'None', 'save_artifacts': True, 'strategies': None, 'total_epochs': 25, 'features': 'EFs', 'architecture': 'LSTM', 'hidden_dim': 32, 'layers': 2, 'transformer_nheads': 4, 'dropout': 0, 'human_train_size': 210, 'online_sim_type': 'before_epoch', 'basic_nature': 12, 'online_simulation_factor': 4, 'simulation_bot_per_user': 6, 'simulation_signal_error': 0.3, 'simulation_user_improve': 0.01, 'max_games': 4, 'zero_knowledge': True, 'bots_per_user': 6, 'SIMULATION_EFs_PATH': 'data/EFs_by_GPT35.csv', 'favorite_topic_method': 'review', 'agent': 'modelbasedRL', 'force_train': True, 'output_dim': 2, 'offline_simulation_size': 0, 'OFFLINE_SIM_DATA_PATH': 'data/LLM_games_personas.csv', 'personas_balanced': True, 'personas_group_number': -1}
+2024-04-24 13:17:41,347 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set FEATURES_PATH = data/EFs_by_GPT35.csv - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,347 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb FEATURES_PATH data/EFs_by_GPT35.csv None
+2024-04-24 13:17:41,348 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set REVIEW_DIM = 37 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,348 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb REVIEW_DIM 37 None
+2024-04-24 13:17:41,348 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set use_user_vector = False - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,348 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb use_user_vector False None
+2024-04-24 13:17:41,349 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set online_simulation_size = 840 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,349 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb online_simulation_size 840 None
+2024-04-24 13:17:41,349 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set input_dim = 60 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,349 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb input_dim 60 None
+2024-04-24 13:17:41,350 INFO    MainThread:3688 [wandb_config.py:__setitem__():151] config set wandb_run_id = mwg1k7av - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x00000260D28214F0>>
+2024-04-24 13:17:41,350 INFO    MainThread:3688 [wandb_run.py:_config_callback():1347] config_cb wandb_run_id mwg1k7av None
+2024-04-24 13:20:22,565 WARNING MsgRouterThr:3688 [router.py:message_loop():77] message_loop has been closed

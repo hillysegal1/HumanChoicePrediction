@@ -1,22 +1,24 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from utils.usersvectors import UsersVectors
-
 
 class Attention(nn.Module):
     def __init__(self, hidden_dim):
         super(Attention, self).__init__()
         self.hidden_dim = hidden_dim
-        self.attention_weights = nn.Linear(hidden_dim, 1)
+        self.attn = nn.Linear(self.hidden_dim, 1)
 
     def forward(self, lstm_outputs):
-        attention_logits = self.attention_weights(lstm_outputs)
-        attention_weights = torch.softmax(attention_logits, dim=1)
-        context_vector = torch.sum(attention_weights * lstm_outputs, dim=1)
-        return context_vector
+        # lstm_outputs shape: (batch_size, seq_len, hidden_dim)
+        attn_weights = torch.softmax(self.attn(lstm_outputs).squeeze(2), dim=1)
+        # attn_weights shape: (batch_size, seq_len)
+        context_vector = torch.bmm(attn_weights.unsqueeze(1), lstm_outputs).squeeze(1)
+        # context_vector shape: (batch_size, hidden_dim)
+        return context_vector, attn_weights
 
 
-class SpecialLSTMWithAttention(nn.Module):
+class SpecialLSTM(nn.Module):
     def __init__(self, n_layers, input_dim, hidden_dim, output_dim, dropout, logsoftmax=True, input_twice=False):
         super().__init__()
         self.n_layers = n_layers
@@ -25,6 +27,7 @@ class SpecialLSTMWithAttention(nn.Module):
         self.output_dim = output_dim
         self.dropout = dropout
         self.input_twice = input_twice
+        self.attention = Attention(hidden_dim)  # Instantiate the attention module
 
         self.input_fc = nn.Sequential(nn.Linear(input_dim, input_dim * 2),
                                       nn.Dropout(dropout),
@@ -39,7 +42,7 @@ class SpecialLSTMWithAttention(nn.Module):
                                  num_layers=self.n_layers,
                                  dropout=dropout)
 
-        seq = [nn.Linear(self.hidden_dim + (input_dim if self.input_twice else 0), self.hidden_dim // 2),
+        seq = [nn.Linear(self.hidden_dim, self.hidden_dim // 2),
                nn.ReLU(),
                nn.Linear(self.hidden_dim // 2, self.output_dim)]
         if logsoftmax:
@@ -47,41 +50,27 @@ class SpecialLSTMWithAttention(nn.Module):
 
         self.output_fc = nn.Sequential(*seq)
 
-        self.attention = Attention(self.hidden_dim)
-
         self.user_vectors = UsersVectors(user_dim=self.hidden_dim, n_layers=self.n_layers)
         self.game_vectors = UsersVectors(user_dim=self.hidden_dim, n_layers=self.n_layers)
+
+    def forward(self, input_vec, game_vector, user_vector):
+        lstm_input = self.input_fc(input_vec)
+        lstm_output, (game_vector, user_vector) = self.main_task(lstm_input.contiguous(),
+                                                                 (game_vector.contiguous(),
+                                                                  user_vector.contiguous()))
+        # Apply attention
+        context_vector, attn_weights = self.attention(lstm_output)
+
+        if self.input_twice:
+            context_vector = torch.cat([context_vector, input_vec], dim=-1)
+
+        output = self.output_fc(context_vector)
+        return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
+
+
 
     def init_game(self, batch_size=1):
         return torch.stack([self.game_vectors.init_user] * batch_size, dim=0)
 
     def init_user(self, batch_size=1):
         return torch.stack([self.user_vectors.init_user] * batch_size, dim=0)
-
-    def forward(self, input_vec, game_vector, user_vector):
-        lstm_input = self.input_fc(input_vec)
-        # lstm_input = lstm_input.reshape(-1, self.hidden_dim)
-        # output = self.output_fc(lstm_input)
-        lstm_shape = lstm_input.shape
-        shape = user_vector.shape
-        assert game_vector.shape == shape
-        if len(lstm_shape) != len(shape):
-            lstm_input = lstm_input.reshape((1,) * (len(shape) - 1) + lstm_input.shape)
-        user_vector = user_vector.reshape(shape[:-1][::-1] + (shape[-1],))
-        game_vector = game_vector.reshape(shape[:-1][::-1] + (shape[-1],))
-        lstm_output, (game_vector, user_vector) = self.main_task(lstm_input.contiguous(),
-                                                                 (game_vector.contiguous(),
-                                                                  user_vector.contiguous()))
-        user_vector = user_vector.reshape(shape)
-        game_vector = game_vector.reshape(shape)
-
-        context_vector = self.attention.forward(lstm_output)
-        lstm_output = torch.cat([lstm_output, context_vector.unsqueeze(1).expand(-1, lstm_output.size(1), -1)], dim=-1)
-
-        output = self.output_fc(lstm_output)
-        if len(output.shape) != len(lstm_shape):
-            output.reshape(-1, output.shape[-1])
-        if self.training:
-            return {"output": output, "game_vector": game_vector, "user_vector": user_vector}
-        else:
-            return {"output": output, "game_vector": game_vector.detach(), "user_vector": user_vector.detach()}
