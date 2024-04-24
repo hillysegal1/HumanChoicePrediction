@@ -1,0 +1,74 @@
+
+Start training the environment...
+################
+# Epoch 0
+################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create online-simulation users for this epoch. mean games/user: 44.35:  99%|█████████▉| 835/840 [01:48<00:00,  7.15it/s]
+Shapes:
+Output shape: torch.Size([4, 2]) tensor([[-0.8276, -0.5746],
+        [-0.8202, -0.5804],
+        [-0.8275, -0.5747],
+        [-0.8200, -0.5806]], grad_fn=<LogSoftmaxBackward0>)
+Create online-simulation users for this epoch. mean games/user: 44.31: 100%|██████████| 840/840 [01:49<00:00,  7.70it/s]
+Online Simulation:   0%|          | 0/9306 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 38, in __init__
+    self.train()
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 185, in train
+    print("Reshaped output shape:", output.reshape(batch_size * DATA_ROUNDS_PER_GAME, -1).shape)
+RuntimeError: shape '[40, -1]' is invalid for input of size 8

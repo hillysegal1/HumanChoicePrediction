@@ -1,0 +1,27 @@
+
+Start training the environment...
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\generic.py", line 6001, in __setattr__
+    object.__getattribute__(self, name)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\series.py", line 669, in name
+    return self._name
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Series' object has no attribute '_name'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 38, in __init__
+    self.train()
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 73, in train
+    train_dataset = OfflineDataSet(user_groups="X", weight_type=self.config.loss_weight_type,
+  File "C:\HumanChoicePredictionCloned\utils\datasets.py", line 94, in __init__
+    for review in hotel_df.iterrows():
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\frame.py", line 1400, in iterrows
+    s = klass(v, index=columns, name=k).__finalize__(self)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\series.py", line 518, in __init__
+    self.name = name
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\generic.py", line 6001, in __setattr__
+    object.__getattribute__(self, name)
+KeyboardInterrupt

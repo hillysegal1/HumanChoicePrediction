@@ -55,11 +55,6 @@ class SpecialLSTM(nn.Module):
 
     def forward(self, input_vec, game_vector, user_vector):
         lstm_input = self.input_fc(input_vec)
-        print("Input sizes:")
-        print("input_vec:", input_vec.size())
-        print("game_vector:", game_vector.size())
-        print("user_vector:", user_vector.size())
-        print("LSTM input size:", lstm_input.size())
 
         lstm_shape = lstm_input.shape
         shape = user_vector.shape
@@ -85,10 +80,10 @@ class SpecialLSTM(nn.Module):
         output = self.output_fc(context_vector)
         if len(output.shape) != len(lstm_shape):
             output.reshape(-1, output.shape[-1])
-
-        return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
-
-
+        if self.training:
+            return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
+        else:
+            return {"output": output, "game_vector": game_vector.detach(), "user_vector": user_vector.detach(),"attn_weights": attn_weights}
 
 
 

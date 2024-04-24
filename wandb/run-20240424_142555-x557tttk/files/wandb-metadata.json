@@ -1,0 +1,45 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.8.19",
+    "heartbeatAt": "2024-04-24T11:25:57.104506",
+    "startedAt": "2024-04-24T11:25:55.122545",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:/HumanChoicePredictionCloned/StrategyTransfer.py",
+    "codePathLocal": "StrategyTransfer.py",
+    "codePath": "StrategyTransfer.py",
+    "git": {
+        "remote": "https://github.com/hillysegal1/HumanChoicePrediction.git",
+        "commit": "c5961875dc586d828ff4d4814d3375050e113c23"
+    },
+    "email": "hillysegal@technion.campus.ac.il",
+    "root": "C:/HumanChoicePredictionCloned",
+    "host": "DESKTOP-34H6H03",
+    "username": "Hilly Segal",
+    "executable": "C:\\ProgramData\\anaconda3\\envs\\final_project_env\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2001.0,
+        "min": 0.0,
+        "max": 2001.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2001.0,
+            "min": 0.0,
+            "max": 2001.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 224.93753051757812,
+            "used": 222.86631393432617
+        }
+    },
+    "memory": {
+        "total": 7.733600616455078
+    }
+}
