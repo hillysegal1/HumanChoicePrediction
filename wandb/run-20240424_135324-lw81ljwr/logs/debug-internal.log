@@ -1,0 +1,19 @@
+2024-04-24 13:53:25,006 INFO    StreamThr :13604 [internal.py:wandb_internal():86] W&B internal server running at pid: 13604, started at: 2024-04-24 13:53:25.005391
+2024-04-24 13:53:25,008 DEBUG   HandlerThread:13604 [handler.py:handle_request():146] handle_request: status
+2024-04-24 13:53:25,015 INFO    WriterThread:13604 [datastore.py:open_for_write():87] open: C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\run-lw81ljwr.wandb
+2024-04-24 13:53:25,016 DEBUG   SenderThread:13604 [sender.py:send():379] send: header
+2024-04-24 13:53:25,076 DEBUG   SenderThread:13604 [sender.py:send():379] send: run
+2024-04-24 13:53:26,092 DEBUG   HandlerThread:13604 [handler.py:handle_request():146] handle_request: shutdown
+2024-04-24 13:53:26,092 INFO    HandlerThread:13604 [handler.py:finish():866] shutting down handler
+2024-04-24 13:53:26,140 INFO    SenderThread:13604 [dir_watcher.py:__init__():211] watching files in: C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\files
+2024-04-24 13:53:26,141 INFO    SenderThread:13604 [sender.py:_start_run_threads():1124] run started: lw81ljwr with start time 1713956005.008381
+2024-04-24 13:53:26,141 INFO    SenderThread:13604 [sender.py:finish():1546] shutting down sender
+2024-04-24 13:53:26,141 INFO    SenderThread:13604 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-04-24 13:53:27,094 INFO    WriterThread:13604 [datastore.py:close():296] close: C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\run-lw81ljwr.wandb
+2024-04-24 13:53:27,143 INFO    SenderThread:13604 [dir_watcher.py:finish():388] scan: C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\files
+2024-04-24 13:53:27,143 INFO    SenderThread:13604 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\files\config.yaml config.yaml
+2024-04-24 13:53:27,143 INFO    SenderThread:13604 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-24 13:53:27,143 INFO    SenderThread:13604 [file_pusher.py:join():178] waiting for file pusher
+2024-04-24 13:53:28,564 INFO    wandb-upload_0:13604 [upload_job.py:push():131] Uploaded file C:\HumanChoicePredictionCloned\wandb\run-20240424_135324-lw81ljwr\files\config.yaml
+2024-04-24 13:53:29,167 INFO    SenderThread:13604 [file_stream.py:finish():614] file stream finish called
+2024-04-24 13:53:29,974 INFO    SenderThread:13604 [file_stream.py:finish():618] file stream finish is done

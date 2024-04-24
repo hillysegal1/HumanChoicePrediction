@@ -1,0 +1,97 @@
+
+Start training the environment...
+################
+# Epoch 0
+################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create online-simulation users for this epoch. mean games/user: 44.31: 100%|██████████| 840/840 [02:21<00:00,  5.95it/s]
+Online Simulation:   0%|          | 0/9306 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 38, in __init__
+    self.train()
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 175, in train
+    model_output = self.model(model_vectors)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\HumanChoicePredictionCloned\environments\LSTM_env.py", line 10, in forward
+    data = super().forward(vectors["x"], vectors["game_vector"], vectors["user_vector"])
+  File "C:\HumanChoicePredictionCloned\SpecialLSTM_with_attention.py", line 58, in forward
+    lstm_output, (game_hidden, user_hidden) = self.main_task(lstm_input.contiguous(),
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\rnn.py", line 767, in forward
+    self.check_forward_args(input, hx, batch_sizes)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\rnn.py", line 693, in check_forward_args
+    self.check_hidden_size(hidden[0], self.get_expected_hidden_size(input, batch_sizes),
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\rnn.py", line 226, in check_hidden_size
+    raise RuntimeError(msg.format(expected_hidden_size, list(hx.size())))
+RuntimeError: Expected hidden[0] size (2, 4, 32), got [4, 2, 32]

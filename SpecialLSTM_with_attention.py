@@ -55,17 +55,39 @@ class SpecialLSTM(nn.Module):
 
     def forward(self, input_vec, game_vector, user_vector):
         lstm_input = self.input_fc(input_vec)
-        lstm_output, (game_hidden, user_hidden) = self.main_task(lstm_input.contiguous(),
-                                                                 (game_vector.contiguous(),
-                                                                  user_vector.contiguous()))
-        # Apply attention
-        context_vector, attn_weights = self.attention(lstm_output)
+        print("Input sizes:")
+        print("input_vec:", input_vec.size())
+        print("game_vector:", game_vector.size())
+        print("user_vector:", user_vector.size())
+        print("LSTM input size:", lstm_input.size())
 
-        if self.input_twice:
+        lstm_shape = lstm_input.shape
+        shape = user_vector.shape
+        assert game_vector.shape == shape
+        if len(lstm_shape) != len(shape):
+            lstm_input = lstm_input.reshape((1,) * (len(shape) - 1) + lstm_input.shape)
+        user_vector = user_vector.reshape(shape[:-1][::-1] + (shape[-1],))
+        game_vector = game_vector.reshape(shape[:-1][::-1] + (shape[-1],))
+
+        # Pass the inputs and hidden states to the LSTM
+        lstm_output, (game_vector, user_vector) = self.main_task(lstm_input.contiguous(),
+                                                             (game_vector.contiguous(),
+                                                              user_vector.contiguous()))
+        user_vector = user_vector.reshape(shape)
+        game_vector = game_vector.reshape(shape)
+
+        # Apply attention
+        context_vector, attn_weights = self.attention.forward(lstm_output)
+
+        if hasattr(self, "input_twice") and self.input_twice:
             context_vector = torch.cat([context_vector, input_vec], dim=-1)
 
         output = self.output_fc(context_vector)
-        return {"output": output, "game_vector": game_hidden, "user_vector": user_hidden, "attn_weights": attn_weights}
+        if len(output.shape) != len(lstm_shape):
+            output.reshape(-1, output.shape[-1])
+
+        return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
+
 
 
 
