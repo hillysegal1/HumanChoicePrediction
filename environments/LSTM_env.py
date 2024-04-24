@@ -32,10 +32,17 @@ class LSTM_env(environment.Environment):
         else:
             output = self.model({**data, "user_vector": self.currentDM, "game_vector": self.currentGame})
         output["proba"] = torch.exp(output["output"].flatten())
+
+        # Extract attention weights from the output
+        attention_weights = output.get("attn_weights", None)
+        if attention_weights is not None:
+            output["attention_weights"] = attention_weights
+
         if update_vectors:
             self.currentDM = output["user_vector"]
             self.currentGame = output["game_vector"]
         return output
+
 
 
     def init_user_vector(self):

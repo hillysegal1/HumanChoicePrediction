@@ -55,7 +55,7 @@ class SpecialLSTM(nn.Module):
 
     def forward(self, input_vec, game_vector, user_vector):
         lstm_input = self.input_fc(input_vec)
-        lstm_output, (game_vector, user_vector) = self.main_task(lstm_input.contiguous(),
+        lstm_output, (game_hidden, user_hidden) = self.main_task(lstm_input.contiguous(),
                                                                  (game_vector.contiguous(),
                                                                   user_vector.contiguous()))
         # Apply attention
@@ -65,7 +65,8 @@ class SpecialLSTM(nn.Module):
             context_vector = torch.cat([context_vector, input_vec], dim=-1)
 
         output = self.output_fc(context_vector)
-        return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
+        return {"output": output, "game_vector": game_hidden, "user_vector": user_hidden, "attn_weights": attn_weights}
+
 
 
 

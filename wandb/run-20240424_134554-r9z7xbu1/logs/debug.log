@@ -38,3 +38,4 @@ config: {}
 2024-04-24 13:45:56,768 INFO    MainThread:17876 [wandb_run.py:_config_callback():1347] config_cb input_dim 60 None
 2024-04-24 13:45:56,768 INFO    MainThread:17876 [wandb_config.py:__setitem__():151] config set wandb_run_id = r9z7xbu1 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x0000015E391E1490>>
 2024-04-24 13:45:56,768 INFO    MainThread:17876 [wandb_run.py:_config_callback():1347] config_cb wandb_run_id r9z7xbu1 None
+2024-04-24 13:49:13,779 WARNING MsgRouterThr:17876 [router.py:message_loop():77] message_loop has been closed
