@@ -1,0 +1,32 @@
+
+Start training the environment...
+################
+# Epoch 0
+################
+Create online-simulation users for this epoch. mean games/user: 52.00:   1%|          | 10/840 [00:02<03:20,  4.14it/s]
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 38, in __init__
+    self.train()
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 134, in train
+    online_simulation_dataset = OnlineSimulationDataSet(config=self.config)
+  File "C:\HumanChoicePredictionCloned\utils\datasets.py", line 218, in __init__
+    self.new_user()
+  File "C:\HumanChoicePredictionCloned\utils\datasets.py", line 410, in new_user
+    self.add_game(user_id, game)
+  File "C:\HumanChoicePredictionCloned\utils\datasets.py", line 320, in add_game
+    game = pd.DataFrame.from_records(game)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\frame.py", line 2266, in from_records
+    arrays, arr_columns = to_arrays(data, columns)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\internals\construction.py", line 840, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\internals\construction.py", line 940, in _finalize_columns_and_data
+    contents = convert_object_array(contents, dtype=dtype)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\internals\construction.py", line 1067, in convert_object_array
+    arrays = [convert(arr) for arr in content]
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\internals\construction.py", line 1067, in <listcomp>
+    arrays = [convert(arr) for arr in content]
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\pandas\core\internals\construction.py", line 1025, in convert
+    arr = lib.maybe_convert_objects(
+KeyboardInterrupt
