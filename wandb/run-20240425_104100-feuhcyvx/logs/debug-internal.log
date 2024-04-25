@@ -1,0 +1,319 @@
+2024-04-25 10:41:00,185 INFO    StreamThr :12132 [internal.py:wandb_internal():86] W&B internal server running at pid: 12132, started at: 2024-04-25 10:41:00.184044
+2024-04-25 10:41:00,187 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status
+2024-04-25 10:41:00,191 INFO    WriterThread:12132 [datastore.py:open_for_write():87] open: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\run-feuhcyvx.wandb
+2024-04-25 10:41:00,192 DEBUG   SenderThread:12132 [sender.py:send():379] send: header
+2024-04-25 10:41:00,239 DEBUG   SenderThread:12132 [sender.py:send():379] send: run
+2024-04-25 10:41:01,266 INFO    SenderThread:12132 [dir_watcher.py:__init__():211] watching files in: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files
+2024-04-25 10:41:01,267 INFO    SenderThread:12132 [sender.py:_start_run_threads():1124] run started: feuhcyvx with start time 1714030860.186039
+2024-04-25 10:41:01,299 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: check_version
+2024-04-25 10:41:01,299 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: check_version
+2024-04-25 10:41:02,261 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: run_start
+2024-04-25 10:41:02,275 DEBUG   HandlerThread:12132 [system_info.py:__init__():26] System info init
+2024-04-25 10:41:02,275 DEBUG   HandlerThread:12132 [system_info.py:__init__():41] System info init done
+2024-04-25 10:41:02,275 INFO    HandlerThread:12132 [system_monitor.py:start():194] Starting system monitor
+2024-04-25 10:41:02,275 INFO    SystemMonitor:12132 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-25 10:41:02,275 INFO    HandlerThread:12132 [system_monitor.py:probe():214] Collecting system info
+2024-04-25 10:41:02,280 INFO    SystemMonitor:12132 [interfaces.py:start():190] Started cpu monitoring
+2024-04-25 10:41:02,284 DEBUG   HandlerThread:12132 [system_info.py:probe():150] Probing system
+2024-04-25 10:41:02,285 INFO    SystemMonitor:12132 [interfaces.py:start():190] Started disk monitoring
+2024-04-25 10:41:02,293 INFO    SystemMonitor:12132 [interfaces.py:start():190] Started memory monitoring
+2024-04-25 10:41:02,306 INFO    SystemMonitor:12132 [interfaces.py:start():190] Started network monitoring
+2024-04-25 10:41:02,308 DEBUG   HandlerThread:12132 [system_info.py:_probe_git():135] Probing git
+2024-04-25 10:41:02,415 DEBUG   HandlerThread:12132 [system_info.py:_probe_git():143] Probing git done
+2024-04-25 10:41:02,415 DEBUG   HandlerThread:12132 [system_info.py:probe():198] Probing system done
+2024-04-25 10:41:02,415 DEBUG   HandlerThread:12132 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.8.19', 'heartbeatAt': '2024-04-25T07:41:02.285091', 'startedAt': '2024-04-25T07:41:00.175099', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'C:/HumanChoicePredictionCloned/StrategyTransfer.py', 'codePathLocal': 'StrategyTransfer.py', 'codePath': 'StrategyTransfer.py', 'git': {'remote': 'https://github.com/hillysegal1/HumanChoicePrediction.git', 'commit': '02fb03ef2fec6676bb5214a79845a3b39b71db8b'}, 'email': 'hillysegal@technion.campus.ac.il', 'root': 'C:/HumanChoicePredictionCloned', 'host': 'DESKTOP-34H6H03', 'username': 'Hilly Segal', 'executable': 'C:\\ProgramData\\anaconda3\\envs\\final_project_env\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2001.0, 'min': 0.0, 'max': 2001.0}, 'cpu_freq_per_core': [{'current': 2001.0, 'min': 0.0, 'max': 2001.0}], 'disk': {'/': {'total': 224.93753051757812, 'used': 223.31868743896484}}, 'memory': {'total': 7.733600616455078}}
+2024-04-25 10:41:02,416 INFO    HandlerThread:12132 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-25 10:41:02,416 INFO    HandlerThread:12132 [system_monitor.py:probe():227] Publishing system info
+2024-04-25 10:41:02,416 DEBUG   HandlerThread:12132 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-25 10:41:02,422 ERROR   HandlerThread:12132 [system_info.py:_save_conda():221] Error saving conda packages: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\wandb\sdk\internal\system\system_info.py", line 214, in _save_conda
+    subprocess.call(
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\subprocess.py", line 340, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\subprocess.py", line 1327, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2024-04-25 10:41:02,428 DEBUG   HandlerThread:12132 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-25 10:41:02,429 INFO    HandlerThread:12132 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-25 10:41:02,437 DEBUG   SenderThread:12132 [sender.py:send():379] send: files
+2024-04-25 10:41:02,437 INFO    SenderThread:12132 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-25 10:41:02,613 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-25 10:41:02,613 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: python_packages
+2024-04-25 10:41:02,614 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:41:02,614 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:41:02,615 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:41:03,298 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_created():271] file/dir created: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\wandb-metadata.json
+2024-04-25 10:41:03,298 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_created():271] file/dir created: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\requirements.txt
+2024-04-25 10:41:03,298 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_created():271] file/dir created: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\conda-environment.yaml
+2024-04-25 10:41:03,494 DEBUG   SenderThread:12132 [sender.py:send():379] send: telemetry
+2024-04-25 10:41:03,495 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,495 DEBUG   SenderThread:12132 [sender.py:send():379] send: telemetry
+2024-04-25 10:41:03,495 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,495 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,496 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,496 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,496 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:03,496 DEBUG   SenderThread:12132 [sender.py:send():379] send: config
+2024-04-25 10:41:04,225 INFO    wandb-upload_0:12132 [upload_job.py:push():131] Uploaded file C:\Temp\tmp1av5w402wandb\jglmsqlt-wandb-metadata.json
+2024-04-25 10:41:04,323 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_created():271] file/dir created: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:05,260 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:08,363 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:10,305 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:12,402 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:14,419 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:15,358 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:16,429 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:17,611 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:41:17,611 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:41:17,671 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:41:18,447 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:20,465 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:20,492 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:22,482 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:24,510 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:25,537 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:26,535 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:28,553 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:30,582 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:30,584 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:31,593 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\config.yaml
+2024-04-25 10:41:32,600 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:32,625 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:41:32,626 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:41:32,672 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:41:34,608 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:35,897 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:36,617 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:38,631 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:40,647 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:40,957 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:42,664 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:44,688 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:46,010 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:46,709 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:47,645 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:41:47,662 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:41:47,662 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:41:48,728 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:50,746 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:51,116 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:52,774 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:54,797 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:56,253 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:41:56,818 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:41:58,835 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:00,856 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:01,367 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:02,315 DEBUG   SystemMonitor:12132 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-25 10:42:02,316 DEBUG   SenderThread:12132 [sender.py:send():379] send: stats
+2024-04-25 10:42:02,657 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:42:02,657 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:42:02,659 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:42:02,867 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:04,888 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:06,491 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:06,904 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:08,924 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:10,940 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:11,592 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:12,963 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:14,981 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:16,619 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:16,992 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:17,673 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:42:17,721 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:42:17,722 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:42:19,009 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:21,031 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:21,681 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:23,045 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:25,064 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:26,770 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:27,089 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:29,113 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:31,139 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:31,796 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:32,323 DEBUG   SenderThread:12132 [sender.py:send():379] send: stats
+2024-04-25 10:42:32,686 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:42:32,710 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:42:32,710 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:42:33,154 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:35,173 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:36,866 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:37,188 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:39,207 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:41,229 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:42,107 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:43,247 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:45,267 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:47,235 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:47,286 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:47,704 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:42:47,705 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:42:47,705 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:42:49,307 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:51,329 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:52,351 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:53,352 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:55,376 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:57,389 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:42:57,496 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:42:59,752 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:00,996 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:02,333 DEBUG   SenderThread:12132 [sender.py:send():379] send: stats
+2024-04-25 10:43:02,510 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:43:02,783 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-25 10:43:02,804 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:43:02,821 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: stop_status
+2024-04-25 10:43:03,816 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:05,118 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:06,422 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:07,350 DEBUG   SenderThread:12132 [sender.py:send():379] send: exit
+2024-04-25 10:43:07,350 INFO    SenderThread:12132 [sender.py:send_exit():586] handling exit code: 255
+2024-04-25 10:43:07,350 INFO    SenderThread:12132 [sender.py:send_exit():588] handling runtime: 125
+2024-04-25 10:43:07,351 INFO    SenderThread:12132 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-25 10:43:07,352 INFO    SenderThread:12132 [sender.py:send_exit():594] send defer
+2024-04-25 10:43:07,352 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,352 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 0
+2024-04-25 10:43:07,352 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,352 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-04-25 10:43:07,353 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 1
+2024-04-25 10:43:07,353 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,353 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 1
+2024-04-25 10:43:07,353 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,353 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-04-25 10:43:07,353 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 2
+2024-04-25 10:43:07,353 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,354 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 2
+2024-04-25 10:43:07,354 INFO    HandlerThread:12132 [system_monitor.py:finish():203] Stopping system monitor
+2024-04-25 10:43:07,354 DEBUG   SystemMonitor:12132 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-25 10:43:07,354 DEBUG   SystemMonitor:12132 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-25 10:43:07,355 INFO    HandlerThread:12132 [interfaces.py:finish():202] Joined cpu monitor
+2024-04-25 10:43:07,355 INFO    HandlerThread:12132 [interfaces.py:finish():202] Joined disk monitor
+2024-04-25 10:43:07,356 INFO    HandlerThread:12132 [interfaces.py:finish():202] Joined memory monitor
+2024-04-25 10:43:07,356 INFO    HandlerThread:12132 [interfaces.py:finish():202] Joined network monitor
+2024-04-25 10:43:07,357 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,357 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-04-25 10:43:07,357 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 3
+2024-04-25 10:43:07,357 DEBUG   SenderThread:12132 [sender.py:send():379] send: stats
+2024-04-25 10:43:07,357 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,358 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 3
+2024-04-25 10:43:07,358 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,358 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-04-25 10:43:07,359 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 4
+2024-04-25 10:43:07,359 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,359 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 4
+2024-04-25 10:43:07,359 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,359 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-04-25 10:43:07,359 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 5
+2024-04-25 10:43:07,360 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,360 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 5
+2024-04-25 10:43:07,360 DEBUG   SenderThread:12132 [sender.py:send():379] send: summary
+2024-04-25 10:43:07,361 INFO    SenderThread:12132 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-25 10:43:07,362 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,362 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-04-25 10:43:07,362 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 6
+2024-04-25 10:43:07,362 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,362 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 6
+2024-04-25 10:43:07,362 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,362 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-04-25 10:43:07,362 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 7
+2024-04-25 10:43:07,363 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:43:07,363 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:07,363 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 7
+2024-04-25 10:43:07,363 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:07,363 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-04-25 10:43:07,388 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:07,389 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_created():271] file/dir created: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\wandb-summary.json
+2024-04-25 10:43:08,087 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:09,435 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:11,158 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 8
+2024-04-25 10:43:11,159 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:11,159 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:11,160 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 8
+2024-04-25 10:43:11,160 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:11,161 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-04-25 10:43:11,161 INFO    SenderThread:12132 [job_builder.py:build():318] Attempting to build job artifact
+2024-04-25 10:43:11,164 INFO    SenderThread:12132 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-04-25 10:43:11,455 INFO    Thread-16 :12132 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:11,637 INFO    SenderThread:12132 [job_builder.py:build():431] adding wandb-job metadata file
+2024-04-25 10:43:11,645 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 9
+2024-04-25 10:43:11,645 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:11,645 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 9
+2024-04-25 10:43:11,646 DEBUG   SenderThread:12132 [sender.py:send():379] send: artifact
+2024-04-25 10:43:12,114 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:13,218 INFO    SenderThread:12132 [sender.py:send_artifact():1468] sent artifact job-https___github.com_hillysegal1_HumanChoicePrediction.git_StrategyTransfer.py - {'id': 'QXJ0aWZhY3Q6ODA4NTEwNDI2', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE2NDQyNTE3Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODA4NTEwNDI2', 'versionIndex': 7}}}
+2024-04-25 10:43:13,218 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:13,219 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-04-25 10:43:13,219 INFO    SenderThread:12132 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-04-25 10:43:13,476 INFO    SenderThread:12132 [dir_watcher.py:finish():388] scan: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files
+2024-04-25 10:43:13,477 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\conda-environment.yaml conda-environment.yaml
+2024-04-25 10:43:13,477 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\config.yaml config.yaml
+2024-04-25 10:43:13,478 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log output.log
+2024-04-25 10:43:13,486 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\requirements.txt requirements.txt
+2024-04-25 10:43:13,488 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\wandb-metadata.json wandb-metadata.json
+2024-04-25 10:43:13,488 INFO    SenderThread:12132 [dir_watcher.py:finish():402] scan save: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\wandb-summary.json wandb-summary.json
+2024-04-25 10:43:13,504 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 10
+2024-04-25 10:43:13,504 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:13,505 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:13,505 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 10
+2024-04-25 10:43:13,506 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:13,506 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-04-25 10:43:13,507 INFO    SenderThread:12132 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-25 10:43:14,081 INFO    wandb-upload_0:12132 [upload_job.py:push():131] Uploaded file C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\config.yaml
+2024-04-25 10:43:14,142 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:14,143 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:14,984 INFO    wandb-upload_2:12132 [upload_job.py:push():131] Uploaded file C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\requirements.txt
+2024-04-25 10:43:15,157 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:15,157 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:15,603 INFO    wandb-upload_3:12132 [upload_job.py:push():131] Uploaded file C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\wandb-summary.json
+2024-04-25 10:43:15,687 INFO    wandb-upload_1:12132 [upload_job.py:push():131] Uploaded file C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\files\output.log
+2024-04-25 10:43:15,890 INFO    Thread-15 :12132 [sender.py:transition_state():614] send defer: 11
+2024-04-25 10:43:15,891 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:15,891 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 11
+2024-04-25 10:43:15,892 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:15,892 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-04-25 10:43:15,893 INFO    SenderThread:12132 [file_pusher.py:join():178] waiting for file pusher
+2024-04-25 10:43:15,893 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 12
+2024-04-25 10:43:15,893 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:15,893 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 12
+2024-04-25 10:43:15,894 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:15,894 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-04-25 10:43:15,894 INFO    SenderThread:12132 [file_stream.py:finish():614] file stream finish called
+2024-04-25 10:43:16,169 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:17,153 INFO    SenderThread:12132 [file_stream.py:finish():618] file stream finish is done
+2024-04-25 10:43:17,153 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 13
+2024-04-25 10:43:17,153 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:17,154 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:17,154 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 13
+2024-04-25 10:43:17,155 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: status_report
+2024-04-25 10:43:17,156 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:17,156 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-04-25 10:43:17,156 INFO    SenderThread:12132 [sender.py:transition_state():614] send defer: 14
+2024-04-25 10:43:17,157 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: defer
+2024-04-25 10:43:17,157 INFO    HandlerThread:12132 [handler.py:handle_request_defer():172] handle defer: 14
+2024-04-25 10:43:17,158 DEBUG   SenderThread:12132 [sender.py:send():379] send: final
+2024-04-25 10:43:17,159 DEBUG   SenderThread:12132 [sender.py:send():379] send: footer
+2024-04-25 10:43:17,160 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: defer
+2024-04-25 10:43:17,160 INFO    SenderThread:12132 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-04-25 10:43:17,161 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:17,163 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-25 10:43:17,163 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: server_info
+2024-04-25 10:43:17,164 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: get_summary
+2024-04-25 10:43:17,164 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: sampled_history
+2024-04-25 10:43:17,164 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-25 10:43:17,166 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:17,166 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: poll_exit
+2024-04-25 10:43:17,167 DEBUG   SenderThread:12132 [sender.py:send_request():406] send_request: server_info
+2024-04-25 10:43:17,358 INFO    MainThread:12132 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2024-04-25 10:43:17,358 INFO    MainThread:12132 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2024-04-25 10:43:17,358 INFO    MainThread:12132 [wandb_run.py:_footer_sync_info():3895] logging synced files
+2024-04-25 10:43:17,359 DEBUG   HandlerThread:12132 [handler.py:handle_request():146] handle_request: shutdown
+2024-04-25 10:43:17,359 INFO    HandlerThread:12132 [handler.py:finish():866] shutting down handler
+2024-04-25 10:43:18,175 INFO    WriterThread:12132 [datastore.py:close():296] close: C:\HumanChoicePredictionCloned\wandb\run-20240425_104100-feuhcyvx\run-feuhcyvx.wandb
+2024-04-25 10:43:18,364 INFO    SenderThread:12132 [sender.py:finish():1546] shutting down sender
+2024-04-25 10:43:18,364 INFO    SenderThread:12132 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-25 10:43:18,365 INFO    SenderThread:12132 [file_pusher.py:join():178] waiting for file pusher

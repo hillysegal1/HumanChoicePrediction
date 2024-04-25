@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 25, in __init__
+    self.init_model_arc(config=config)
+  File "C:\HumanChoicePredictionCloned\environments\LSTM_env.py", line 26, in init_model_arc
+    self.model = LSTM_env_ARC(n_layers=self.n_layers, input_dim=config['input_dim'], hidden_dim=self.hidden_dim,
+  File "C:\HumanChoicePredictionCloned\SpecialLSTM_with_attention.py", line 32, in __init__
+    self.attention = Attention(hidden_dim)  # Instantiate the attention module
+TypeError: __init__() missing 1 required positional argument: 'output_dim'

@@ -1,0 +1,5 @@
+2024-04-25 11:04:34,760 INFO    StreamThr :8960 [internal.py:wandb_internal():86] W&B internal server running at pid: 8960, started at: 2024-04-25 11:04:34.759809
+2024-04-25 11:04:34,762 DEBUG   HandlerThread:8960 [handler.py:handle_request():146] handle_request: status
+2024-04-25 11:04:34,769 INFO    WriterThread:8960 [datastore.py:open_for_write():87] open: C:\HumanChoicePredictionCloned\wandb\run-20240425_110434-tbg6t1vt\run-tbg6t1vt.wandb
+2024-04-25 11:04:34,771 DEBUG   SenderThread:8960 [sender.py:send():379] send: header
+2024-04-25 11:04:34,830 DEBUG   SenderThread:8960 [sender.py:send():379] send: run

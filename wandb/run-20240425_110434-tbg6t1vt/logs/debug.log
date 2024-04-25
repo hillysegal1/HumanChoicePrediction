@@ -1,0 +1,5 @@
+2024-04-25 11:04:34,720 INFO    MainThread:17768 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-25 11:04:34,720 INFO    MainThread:17768 [wandb_setup.py:_flush():76] Configure stats pid to 17768
+2024-04-25 11:04:34,720 INFO    MainThread:17768 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Hilly Segal\.config\wandb\settings
+2024-04-25 11:04:34,720 INFO    MainThread:17768 [wandb_setup.py:_flush():76] Loading settings from C:\HumanChoicePredictionCloned\wandb\settings
+2024-04-25 11:04:34,721 INFO    MainThread:17768 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}

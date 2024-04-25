@@ -1,0 +1,78 @@
+
+Start training the environment...
+################
+# Epoch 0
+################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create online-simulation users for this epoch. mean games/user: 44.33:  99%|█████████▉| 831/840 [01:50<00:01,  6.33it/s]
+Create online-simulation users for this epoch. mean games/user: 44.31: 100%|██████████| 840/840 [01:51<00:00,  7.51it/s]
+Online Simulation:   0%|          | 0/9306 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:/HumanChoicePredictionCloned/StrategyTransfer.py", line 112, in <module>
+    env_model = environments.LSTM_env.LSTM_env(env_name, config=config)
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 38, in __init__
+    self.train()
+  File "C:\HumanChoicePredictionCloned\environments\environment.py", line 175, in train
+    model_output = self.model(model_vectors)
+  File "C:\ProgramData\anaconda3\envs\final_project_env\lib\site-packages\torch\nn\modules\module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\HumanChoicePredictionCloned\environments\LSTM_env.py", line 10, in forward
+    data = super().forward(vectors["x"], vectors["game_vector"], vectors["user_vector"])
+  File "C:\HumanChoicePredictionCloned\SpecialLSTM_with_attention.py", line 79, in forward
+    context_vector, attn_weights = self.attention.forward(lstm_output)
+  File "C:\HumanChoicePredictionCloned\SpecialLSTM_with_attention.py", line 20, in forward
+    context_vector = context_vector.view(-1, lstm_outputs.shape[1], self.output_dim)  # Reshape to match output_dim
+RuntimeError: shape '[-1, 10, 2]' is invalid for input of size 128
