@@ -1,0 +1,14 @@
+wandb_version: 1
+
+ENV_HPT_mode:
+  value: true
+ENV_LEARNING_RATE:
+  value: 0.001
+architecture:
+  value: LSTM
+hidden_dim:
+  value: 32
+layers:
+  value: 2
+seed:
+  value: 1

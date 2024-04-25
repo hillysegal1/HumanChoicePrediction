@@ -1,0 +1,35 @@
+2024-04-25 14:07:09 INFO Running runs: []
+2024-04-25 14:07:10 INFO Agent received command: run
+2024-04-25 14:07:10 INFO Agent starting run with config:
+	ENV_HPT_mode: True
+	ENV_LEARNING_RATE: 0.001
+	architecture: LSTM
+	hidden_dim: 32
+	layers: 2
+	seed: 1
+2024-04-25 14:07:10 INFO About to run command: python StrategyTransfer.py --ENV_HPT_mode=True --ENV_LEARNING_RATE=0.001 --architecture=LSTM --hidden_dim=32 --layers=2 --seed=1
+2024-04-25 14:07:15 INFO Running runs: ['eqbko6gc']
+2024-04-25 14:07:15 INFO Cleaning up finished run: eqbko6gc
+2024-04-25 14:07:15 INFO Agent received command: run
+2024-04-25 14:07:15 INFO Agent starting run with config:
+	ENV_HPT_mode: True
+	ENV_LEARNING_RATE: 0.001
+	architecture: LSTM
+	hidden_dim: 32
+	layers: 2
+	seed: 2
+2024-04-25 14:07:15 INFO About to run command: python StrategyTransfer.py --ENV_HPT_mode=True --ENV_LEARNING_RATE=0.001 --architecture=LSTM --hidden_dim=32 --layers=2 --seed=2
+2024-04-25 14:07:20 INFO Running runs: ['6ow1fb0o']
+2024-04-25 14:07:20 INFO Cleaning up finished run: 6ow1fb0o
+2024-04-25 14:07:23 INFO Agent received command: run
+2024-04-25 14:07:23 INFO Agent starting run with config:
+	ENV_HPT_mode: True
+	ENV_LEARNING_RATE: 0.001
+	architecture: LSTM
+	hidden_dim: 32
+	layers: 4
+	seed: 1
+2024-04-25 14:07:23 INFO About to run command: python StrategyTransfer.py --ENV_HPT_mode=True --ENV_LEARNING_RATE=0.001 --architecture=LSTM --hidden_dim=32 --layers=4 --seed=1
+2024-04-25 14:07:28 INFO Running runs: ['ti1nn870']
+2024-04-25 14:07:28 ERROR Detected 3 failed runs in the first 60 seconds, shutting down.
+2024-04-25 14:07:28 INFO To disable this check set WANDB_AGENT_DISABLE_FLAPPING=true

@@ -31,4 +31,5 @@ sweep_config = {
 # Initialize a new sweep
 sweep_id = wandb.sweep(sweep=sweep_config, project=project)
 print("run this line to run your agent in a screen:")
-print(f"screen -dmS \"sweep_agent\" wandb agent {YOUR_WANDB_USERNAME}/{project}/{sweep_id}")
+print("screen -dmS \"sweep_agent\" wandb agent {}/{}/{}".format(YOUR_WANDB_USERNAME, project, sweep_id))
+
