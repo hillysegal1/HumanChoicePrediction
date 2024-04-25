@@ -4,9 +4,10 @@ import torch.nn.functional as F
 from utils.usersvectors import UsersVectors
 
 class Attention(nn.Module):
-    def __init__(self, hidden_dim):
+    def __init__(self, hidden_dim, output_dim):
         super(Attention, self).__init__()
         self.hidden_dim = hidden_dim
+        self.output_dim = output_dim
         self.attn = nn.Linear(self.hidden_dim, 1)
 
     def forward(self, lstm_outputs):
@@ -14,8 +15,11 @@ class Attention(nn.Module):
         attn_weights = torch.softmax(self.attn(lstm_outputs).squeeze(2), dim=1)
         # attn_weights shape: (batch_size, seq_len)
         context_vector = torch.bmm(attn_weights.unsqueeze(1), lstm_outputs).squeeze(1)
+
         # context_vector shape: (batch_size, hidden_dim)
         return context_vector, attn_weights
+
+
 
 
 class SpecialLSTM(nn.Module):
@@ -27,7 +31,8 @@ class SpecialLSTM(nn.Module):
         self.output_dim = output_dim
         self.dropout = dropout
         self.input_twice = input_twice
-        self.attention = Attention(hidden_dim)  # Instantiate the attention module
+        self.attention = Attention(hidden_dim=self.hidden_dim, output_dim=self.output_dim)
+        # Instantiate the attention module
 
         self.input_fc = nn.Sequential(nn.Linear(input_dim, input_dim * 2),
                                       nn.Dropout(dropout),
@@ -73,13 +78,20 @@ class SpecialLSTM(nn.Module):
 
         # Apply attention
         context_vector, attn_weights = self.attention.forward(lstm_output)
+        batch_size, seq_len, hidden_dim = lstm_output.size()
+        context_vector = context_vector.unsqueeze(1).expand(batch_size, seq_len, hidden_dim)
 
         if hasattr(self, "input_twice") and self.input_twice:
             context_vector = torch.cat([context_vector, input_vec], dim=-1)
 
         output = self.output_fc(context_vector)
+        #output = output.view(lstm_shape[0], lstm_shape[1], -1)  # Reshape to [4, 10, 2]
+
+        #output = output.view(-1, self.output_dim)  # Reshape to [batch_size * DATA_ROUNDS_PER_GAME, -1]
+
         if len(output.shape) != len(lstm_shape):
             output.reshape(-1, output.shape[-1])
+
         if self.training:
             return {"output": output, "game_vector": game_vector, "user_vector": user_vector, "attn_weights": attn_weights}
         else:

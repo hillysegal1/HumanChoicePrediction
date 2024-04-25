@@ -179,14 +179,10 @@ class Environment:
                     output = model_output["output"]
                     mask = (batch["action_taken"] != -100).flatten()
                     # Print shapes for debugging
-                    print("Shapes:")
-                    print("Output shape:", output.shape,output)
-                    print("Mask shape:", mask.shape)
-                    print("Reshaped output shape:", output.reshape(batch_size * DATA_ROUNDS_PER_GAME, -1).shape)
+
 
                     # Debugging the shapes
-                    print("Shapes after reshaping and indexing:")
-                    print("Output shape after reshape and indexing:", output.reshape(batch_size * DATA_ROUNDS_PER_GAME, -1)[mask].shape)
+
                     relevant_predictions = output.reshape(batch_size * DATA_ROUNDS_PER_GAME, -1)[mask]
                     relevant_ground_truth = batch["action_taken"].flatten()[mask]
                     relevant_weight = batch["weight"][batch["is_sample"]]

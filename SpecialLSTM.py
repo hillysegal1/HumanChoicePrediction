@@ -61,9 +61,17 @@ class SpecialLSTM(nn.Module):
         game_vector = game_vector.reshape(shape)
         if hasattr(self, "input_twice") and self.input_twice:
             lstm_output = torch.cat([lstm_output, input_vec], dim=-1)
+        print("shape",lstm_input.shape)
+        print("shape output",lstm_output.shape)
+
         output = self.output_fc(lstm_output)
+        print("BEFORE STUFF OUTPUT SHAPE:",output.shape)
         if len(output.shape) != len(lstm_shape):
             output.reshape(-1, output.shape[-1])
+        print("SpecialLSTM:")
+        print("  - Input Shape (after input_fc):", lstm_input.shape)
+        print("  - LSTM Output Shape:", lstm_output.shape)
+        print("  - Output Shape (before reshaping):", output.shape)
         if self.training:
             return {"output": output, "game_vector": game_vector, "user_vector": user_vector}
         else:
