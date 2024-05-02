@@ -9,7 +9,7 @@ import sklearn
 from sklearn import metrics
 
 class wandb_results:
-    def __init__(self, project_id, wandb_username="hilly-segal"):
+    def __init__(self, project_id, wandb_username="yaelkatsman"):
         self.api = wandb.Api(timeout=60)
         self.project_id = project_id
         self.wandb_username = wandb_username
